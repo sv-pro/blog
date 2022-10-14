@@ -3,15 +3,26 @@
 # install node + npm
 # 1 - install nvm - Node Version Manager
 
-
-source ~/.bashrc
-
-is_found=$((type nvm | head -1) 2>&1)
-
-if [[ $is_found =~ "not found" ]];
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+function install_nvm() {
     source ~/.bashrc
-else
-    echo "Already installed"
-fi
 
+    is_found=$((type nvm | head -1) 2>&1)
+
+    if [[ $is_found =~ "not found" ]];
+    then
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+        source ~/.bashrc
+    else
+        echo "Already installed"
+    fi
+}
+
+function install_npm() {
+    # todo: ensure nvm is installed (install_nvm if needed )
+    
+}
+
+function install_ansible(){
+    sudo apt update
+    sudo apt install -y ansible
+}
