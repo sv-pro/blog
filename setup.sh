@@ -26,3 +26,7 @@ function install_ansible(){
     sudo apt update
     sudo apt install -y ansible
 }
+
+function install_eleventy(){
+    npm install -g @11ty/eleventy
+}
