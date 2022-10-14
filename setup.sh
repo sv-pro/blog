@@ -17,9 +17,9 @@ function install_nvm() {
     fi
 }
 
-function install_npm() {
+function install_node() {
     # todo: ensure nvm is installed (install_nvm if needed )
-    
+    nvm install node
 }
 
 function install_ansible(){
